@@ -25,6 +25,10 @@ NUMERO CATORCE (...wait, that's not right! DAMN YOU, BONO!!!)
 - It should try to resend the bounced email
 - It should not try to resend the bounced email more than once
 
+Curl request to test POST:
+
+curl -X POST "http://alex:password@localhost:3000/bouncehook" -H "Accept: application/json" -H "Content-Type: application/json" -v -d "{ 'ID' : 'id goes here', 'Type' : 'HardBounce', 'Tag' : 'Invitation', 'MessageID' : 'd12c2f1c-60f3-4258-b163-d17052546ae4', 'TypeCode' : 1, 'Email' : 'jim@test.com', 'BouncedAt' : '2010-04-01', 'Details' : 'test bounce', 'DumpAvailable' : true, 'Inactive' : true, 'CanActivate' : true, 'Subject' : 'Hello from our app!'}"
+
 
 
 

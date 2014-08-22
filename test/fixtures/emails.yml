@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  postmark_id: MyString
+  type: 
+  tag: MyString
+  message_id: MyString
+  type_code: 1
+  to_email: MyString
+  bounced_at: 2014-08-21
+  details: MyString
+  dump_available: false
+  inactive: false
+  can_activate: false
+  subject: MyString
+
+two:
+  postmark_id: MyString
+  type: 
+  tag: MyString
+  message_id: MyString
+  type_code: 1
+  to_email: MyString
+  bounced_at: 2014-08-21
+  details: MyString
+  dump_available: false
+  inactive: false
+  can_activate: false
+  subject: MyString
