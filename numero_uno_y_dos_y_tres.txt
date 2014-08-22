@@ -1,0 +1,30 @@
+NUMERO UNO
+
+  Hi Eric! Thanks for getting in touch with us! I'm so sorry to hear that you are having problems. We do our best to catch every single bug we can, but occasionally one slips through into the production site. I'm going to get on this immediately and I'll let you know as soon as I've found a solution.  Until then, I hope you have a great day!
+
+Alex Howington
+Badass Junior Developer at Bidsketch (ok, this part can go if it must...)
+
+NUMERO DOS
+  
+  I believe the problem has something to do with the HTML encoding of the text. The user is probably using the Euro symbol in a rich text editor (total guess) and somewhere that text is being displayed as straight HTML instead of encoded into the symbols it represents (this part I'm pretty sure of).
+
+NUMERO TRES
+
+  The ole portal controller, eh? Well it's obviously a way to control the opening and closing of portals to the 5th dimension. I think anyone can see that. In all seriousness though, it looks to be a controller for a user (Client in this case) dashboard. Sort of a catch-all for the actions performed from the portal/dashboard page. I see the page loaded when the user logs in (index), which presumably loads a list of all their proposals. The info and show actions which load information about a specific proposal. Canvas looks like the way users can create their own proposal templates. optional_fees, set_status, accept_proposal, destroy_comment, all those seem pretty self-explanatory. Accept looks like the actual action to go through accepting a proposal, which would mean accept_proposal is used for something else. It looks like accept_proposal sets data for the sender of the proposal, whereas accept is used by the receiver of the proposal. We've got some nice little protected methods down here that save information on when certain actions happened (such as a pdf export or when a user's last visit was). Finally, there are a couple private methods which look like they send some emails after a proposal has been approved or a support email after the accepting process has failed. And that last little guy just checks to make sure that the onboarding params hash isn't blank. If it is, you aren't onboarding, ya dingus!
+  The thing I like most about this code is pretty superficial, but "notify_honeybadger(e)" is a great line of code. Well done. All the names (besides accept and accept_proposal) are very self-explanatory, and I feel like I can almost understand the code without having to dive into the actual methods. The use of protected and private methods lets me quickly know the scope and use of those methods. Everything seems pretty well named, I can tell what almost every variable does just from reading the name. I don't have to use those context clues of what it's actually doing in the code.
+  The biggest problem I found was just the actual formatting of some of the code. Sometimes there are two empty lines right after the name of the method. Sometimes there are empty lines between nested 'end' statements. The protected and private declarations didn't even register at first glance because they are indented at the same level as the method definitions. Just little things like that make the code a bit harder to parse and read through it quickly. Another small thing that I noticed was that two of the before filters actually use the 'skip_before_filter' syntax used in conjuction with the 'only' option. I would prefer to write that as 'before_filter' used in conjuction with the 'except' option. It just reads a lot nicer and is one less step of logic to translate in your brain. Also, some more comments would be helpful. Maybe something to just explain the difference between accept and accept_proposal, because they sound like they should do similar things based on their method names. This one is total personal preference but I love me some Ruby 1.9 hash syntax! Are you guys using 1.9 yet? Come on, get with the times man! ;) (Fun fact: those 3000+ characters I just wrote are equivalent to 22+ tweets! themoreyouknow.gif!)
+
+
+NUMERO CATORCE (...wait, that's not right! DAMN YOU, BONO!!!)
+
+- It should accept a POST request to a certain URL
+- It should authenticate the request (ex: http://username:password@example.com/bouncehook)
+- The request should contain at least a few basic params ("ID", "MessageID", "Email")
+- It should parse the request body
+- It should try to resend the bounced email
+- It should not try to resend the bounced email more than once
+
+
+
+
