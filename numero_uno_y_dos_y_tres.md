@@ -3,6 +3,7 @@
 Hi Eric! Thanks for getting in touch with us! I'm so sorry to hear that you are having problems. We do our best to catch every single bug we can, but occasionally one slips through into the production site. I'm going to get on this immediately and I'll let you know as soon as I've found a solution.  Until then, I hope you have a great day!
 
 Alex Howington
+
 Badass Junior Developer at Bidsketch (ok, this part can go if it must...)
 
 # NUMERO DOS
