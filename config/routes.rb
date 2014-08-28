@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   post 'bouncehook', to: 'emails#bounce'
+  get 'send-email', to: 'emails#send_email', as: :send_email
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

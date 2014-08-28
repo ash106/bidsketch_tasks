@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140822022023) do
+ActiveRecord::Schema.define(version: 20140827235418) do
 
-  create_table "emails", force: true do |t|
+  create_table "bounced_emails", force: true do |t|
     t.string   "postmark_id"
     t.string   "type"
     t.string   "tag"
@@ -26,6 +26,32 @@ ActiveRecord::Schema.define(version: 20140822022023) do
     t.boolean  "inactive"
     t.boolean  "can_activate"
     t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notifications", force: true do |t|
+    t.string   "message"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id"
+
+  create_table "sent_emails", force: true do |t|
+    t.string   "message_id"
+    t.string   "to"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sent_emails", ["user_id"], name: "index_sent_emails_on_user_id"
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

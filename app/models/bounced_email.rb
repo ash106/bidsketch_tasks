@@ -1,3 +1,3 @@
-class Email < ActiveRecord::Base
+class BouncedEmail < ActiveRecord::Base
   validates :message_id, uniqueness: true
 end
